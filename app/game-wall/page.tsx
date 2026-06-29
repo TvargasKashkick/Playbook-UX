@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import clarity from '@microsoft/clarity'
 
 const SLIDES = [
   { game: 'Dice Dreams',             earn: 'Earn $815', bg: '/game-wall/featured-carousel.png' },
@@ -45,10 +46,11 @@ const A = {
   navShopping:   '/game-wall/nav-shopping.svg',
 }
 
-function fireClarity(event: string, data?: Record<string, unknown>) {
-  if (typeof window !== 'undefined' && window.clarity) {
-    window.clarity('event', event, data)
+function fireClarity(event: string, data?: Record<string, string>) {
+  if (data) {
+    Object.entries(data).forEach(([k, v]) => clarity.setTag(k, v))
   }
+  clarity.event(event)
 }
 
 const pp = (weight: 400 | 500 | 600 | 700): React.CSSProperties => ({
