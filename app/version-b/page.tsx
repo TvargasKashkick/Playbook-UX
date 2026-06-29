@@ -4,11 +4,11 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 
 const SLIDES = [
-  { game: 'Dice Dreams', earn: 'Earn $125', bg: '/game-wall/featured-carousel.png' },
-  { game: 'Game Title 2', earn: 'Earn $75',  bg: null },
-  { game: 'Game Title 3', earn: 'Earn $50',  bg: null },
-  { game: 'Game Title 4', earn: 'Earn $200', bg: null },
-  { game: 'Game Title 5', earn: 'Earn $30',  bg: null },
+  { game: 'Dice Dreams',             earn: 'Earn $815', bg: '/game-wall/featured-carousel.png' },
+  { game: 'Star Trek: Fleet Command', earn: 'Earn $550', bg: '/game-wall/carousel-star-trek.jpg' },
+  { game: 'Family Island',           earn: 'Earn $375', bg: '/game-wall/carousel-family-island.jpg' },
+  { game: 'Scrabble GO',             earn: 'Earn $150', bg: '/game-wall/carousel-scrabble-go.jpg' },
+  { game: 'Bingo Blitz',             earn: 'Earn $330', bg: '/game-wall/carousel-bingo-blitz.png' },
 ]
 
 const A = {
