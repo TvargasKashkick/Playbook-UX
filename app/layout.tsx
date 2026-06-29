@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <body className="bg-white">
-        <Script id="clarity" strategy="afterInteractive">
+        <Script id="ms-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
