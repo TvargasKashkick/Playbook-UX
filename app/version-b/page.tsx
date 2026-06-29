@@ -264,7 +264,7 @@ function KeepPlayingCard({
         )}
         {/* Play button overlay */}
         <div
-          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-[37px]${onPlay ? ' active:opacity-75' : ''}`}
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full${onPlay ? ' active:opacity-75' : ''}`}
           style={{ width: 74, height: 74, background: 'rgba(118,41,162,0.2)' }}
           onClick={onPlay}
         >
@@ -556,16 +556,16 @@ export default function VersionBPage() {
               <div style={{ overflowX: 'auto', scrollSnapType: 'x mandatory', scrollPaddingLeft: 16, scrollbarWidth: 'none' } as React.CSSProperties}>
                 <div style={{ display: 'flex', gap: 16, alignItems: 'center', paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16, minWidth: 'max-content' }}>
                   <KeepPlayingCard
-                    thumbnailSrc="/game-wall/kp-thumbnail-1.png"
-                    missionText="Complete Level 4"
-                    countdown="6d 112h 11m"
-                  />
-                  <KeepPlayingCard
                     thumbnailSrc="/game-wall/kp-thumbnail-2.png"
                     missionText="Reach Island 3"
                     countdown={countdownText}
                     onPlay={() => router.push('/version-b/game-detail/gameplay')}
-                  onMissions={() => router.push('/version-b/game-detail?tab=missions')}
+                    onMissions={() => router.push('/version-b/game-detail?tab=missions')}
+                  />
+                  <KeepPlayingCard
+                    thumbnailSrc="/game-wall/kp-thumbnail-1.png"
+                    missionText="Complete Level 4"
+                    countdown="6d 112h 11m"
                   />
                   <MoreGamesCard />
                   <KeepPlayingCard
