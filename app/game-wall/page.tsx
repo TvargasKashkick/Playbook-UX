@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
-import clarity from '@microsoft/clarity'
 
 const SLIDES = [
   { game: 'Dice Dreams',             earn: 'Earn $815', bg: '/game-wall/featured-carousel.png' },
@@ -47,10 +46,11 @@ const A = {
 }
 
 function fireClarity(event: string, data?: Record<string, string>) {
-  if (data) {
-    Object.entries(data).forEach(([k, v]) => clarity.setTag(k, v))
-  }
-  clarity.event(event)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const c = typeof window !== 'undefined' ? (window as any).clarity : null
+  if (!c) return
+  if (data) Object.entries(data).forEach(([k, v]) => c('set', k, v))
+  c('event', event)
 }
 
 const pp = (weight: 400 | 500 | 600 | 700): React.CSSProperties => ({
